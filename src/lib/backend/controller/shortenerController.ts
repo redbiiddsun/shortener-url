@@ -2,7 +2,7 @@ import { NextApiResponse } from "next";
 
 import { IShortenerCrudService } from "../services/shortenerService";
 import { ShortenerNextApiRequest } from "@/pages/api/shortener";
-import responseFormat from "../utils/responesFormator";
+import responseFormat from "../utils/responseFormator";
 
 // Prisma Error handler
 import { PrismaClientKnownRequestError, PrismaClientUnknownRequestError, PrismaClientValidationError } from "@prisma/client/runtime/library";
