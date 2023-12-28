@@ -12,3 +12,5 @@ export const storeLocalStorage = (data: Url | null) => {
 
   localStorage.setItem('shortener-data', JSON.stringify(urlHistory))
 }
+
+export const removeLocalStorage = () => localStorage.removeItem('shortener-data')
