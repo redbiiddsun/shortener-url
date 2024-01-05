@@ -5,6 +5,9 @@ import { ShortenerController } from "@/lib/backend/controller/shortenerControlle
 import { ShortenerService } from "@/lib/backend/services/shortenerService";
 
 export interface ShortenerNextApiRequest extends NextApiRequest {
+    query:{
+        pathurl: string
+    }
     body: {
         targeturl: string;
         pathurl: string;
