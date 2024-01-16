@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     try {
         const response = await axios.get(
-            "api/shortener",
+            "/api/shortener",
             options
         );
 
