@@ -1,3 +1,4 @@
+import getURL from "@/lib/config/getURL";
 import axios from "axios";
 import { GetServerSideProps, NextApiRequest, NextApiResponse } from "next";
 import { useRouter } from "next/router";
@@ -12,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     try {
         const response = await axios.get(
-            "/api/shortener",
+            getURL("/api/shortener"),
             options
         );
 
