@@ -17,9 +17,9 @@ export const ShortenerController  = async <T>(
         const { targeturl, pathurl } = request.body;
 
         if (HTTP_METHOD === "GET") {
-            if(!pathurl) return response.status(400).json(responseFormat(false, "No pathurl provided", null))
+            if(!request.query.pathurl) return response.status(400).json(responseFormat(false, "No pathurl provided", null))
 
-            const result = await service.getOne(pathurl)
+            const result = await service.getOne(request.query.pathurl)
 
             if (result == null ) return response.status(204).end()
 
