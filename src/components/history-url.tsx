@@ -1,8 +1,6 @@
 import { Url } from "@prisma/client"
 import { Button } from "./ui/button"
-import { DOMAIN } from "@/lib/config"
 import ShortenerCard from "./shortenercard"
-import { removeLocalStorage } from "@/lib/localStorage"
 import { MouseEventHandler } from "react"
 import getURL from "@/lib/config/getURL"
 
