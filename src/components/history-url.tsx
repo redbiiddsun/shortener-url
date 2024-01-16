@@ -2,8 +2,11 @@ import { Url } from "@prisma/client"
 import { Button } from "./ui/button"
 import { DOMAIN } from "@/lib/config"
 import ShortenerCard from "./shortenercard"
+import { removeLocalStorage } from "@/lib/localStorage"
+import { MouseEventHandler } from "react"
+import getURL from "@/lib/config/getURL"
 
-export default function HistoryURL({ shorturlData }: { shorturlData: Url[] }) {
+export default function HistoryURL({ shorturlData, onClick }: { shorturlData: Url[], onClick?: MouseEventHandler<HTMLButtonElement> | undefined }) {
     return (
         <>
             <div className="w-full max-w-md mt-8">
@@ -11,13 +14,11 @@ export default function HistoryURL({ shorturlData }: { shorturlData: Url[] }) {
                 <div className="space-y-4">
                     {shorturlData.map(function (data) {
                         return (
-                            <ShortenerCard targeturl={data.targeturl} pathurl={DOMAIN + data.pathurl} />
+                            <ShortenerCard key={data.id} targeturl={data.targeturl} pathurl={getURL( data.pathurl)} />
                         )
                     })}
                 </div>
-                <Button className="w-full mt-4 py-2 rounded-b-md" onClick={() => {
-                    localStorage.removeItem('shortener-data')
-                }}>Clear</Button>
+                <Button className="w-full mt-4 py-2 rounded-b-md" onClick={onClick}>Clear History</Button>
             </div>
         </>)
 }
