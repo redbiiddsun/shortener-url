@@ -49,6 +49,7 @@ export const ShortenerController  = async <T>(
         }else if (error instanceof PrismaClientValidationError){
             return response.status(404).json(responseFormat(false, error.message, null))
         }else{
+            console.log(error)
             return response.status(500).json(responseFormat(false, "Internal error", null))
         }
     }
