@@ -5,7 +5,7 @@ export default function ShortenerCard({ targeturl, pathurl }: { targeturl: strin
     return (
         <>
             <div className="flex items-center justify-between bg-gray-100 dark:bg-gray-700 p-4 rounded-md">
-                <div>
+                <div className="w-80 overflow-hidden text-ellipsis text-nowrap">
                     <p className="text-sm text-gray-900 dark:text-white mb-1">{pathurl}</p>
                     <p className="text-xs text-gray-500">{`Original URL: ${targeturl}`}</p>
                 </div>
